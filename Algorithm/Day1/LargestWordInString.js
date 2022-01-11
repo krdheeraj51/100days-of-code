@@ -6,7 +6,15 @@ Your response should be a number.
  */
 
 function findLongestWordLength(str) {
-    return str.length;
-  }
-  
-  findLongestWordLength("The quick brown fox jumped over the lazy dog");
+  let strArray = [];
+  strArray = str.split(' ');
+  var longestWord = "";
+  strArray.forEach(function(word) {
+    if(word.length > longestWord.length) {
+      longestWord = word;
+    }
+  });
+  return longestWord.length;
+}
+
+findLongestWordLength("The quick brown fox jumped over the lazy dog");
