@@ -11,7 +11,11 @@ Translate the provided string to Pig Latin. Input strings are guaranteed to be E
 
  */
 function translatePigLatin(str) {
-    return str;
+  if (str.match(/^[aeiou]/)) return str + 'awy'
+ else {
+    const consonantCluster = str.match(/^[^aeiou]+/)[0];
+    return str.substring(consonantCluster.length) + consonantCluster + 'ay'
   }
-  
-  translatePigLatin("consonant");
+}
+
+translatePigLatin("ove")
